@@ -1,0 +1,347 @@
+:root {
+  --primary: #655dff;
+  --primary-light: #8e8aff;
+  --primary-dark: #4f46f8;
+
+  --alert: #ff6a96;
+  --secondary: #17c9ff;
+
+  --greyLight-0: #dcdcdc;
+  --greyLight-1: #e0ecf7;
+  --greyLight-2: #c8dbf0;
+
+  --greyDark-1: #92acc4;
+  --greyDark-2: #5a768f;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Nunito", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #444;
+  background: linear-gradient(to right, #d8b5ff, #1eae98);
+}
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 /52 / 62 / 74 / 86 / 98
+*/
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  padding: 3.2rem 4.8rem;
+
+  width: 85rem;
+  height: 40rem;
+
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+}
+
+.card {
+  place-self: center;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  height: calc(40rem - 2 * 9rem);
+  width: calc(4 / 7 * 85rem - 2 * 5rem);
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    to bottom,
+    var(--secondary) 0%,
+    var(--primary) 50%
+  );
+
+  z-index: 200;
+
+  padding: 1rem 1.6rem;
+}
+
+.card-number {
+  font-family: "Roboto Mono", monospace;
+
+  color: #fff;
+  font-size: 2.2rem;
+
+  grid-row: 2;
+  grid-column: 1/-1;
+  justify-self: start;
+  align-self: center;
+}
+
+.card-owner {
+  grid-row: 3;
+  grid-column: 1 / span 2;
+
+  justify-self: start;
+  align-self: center;
+}
+
+.card-valid {
+  grid-row: 3;
+  grid-column: -1;
+
+  justify-self: start;
+  align-self: center;
+}
+
+.card-label {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 300;
+
+  color: var(--greyLight-0);
+  letter-spacing: 0px;
+
+  margin-bottom: 0.8rem;
+}
+
+.card-info {
+  font-size: 1.4rem;
+  font-weight: 400;
+
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.form-details input {
+  margin-bottom: 0.6rem !important;
+}
+
+.error {
+  font-size: 1.2rem;
+  color: var(--alert);
+}
+
+.form {
+  padding: 1.6rem;
+  padding-left: 2.4rem;
+}
+
+h2 {
+  margin-bottom: 1.6rem;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+
+  letter-spacing: 0.5px;
+}
+.form-heading {
+    margin-top: 16px; /* Adjust space from the top */
+    text-align: center; /* Centers text within the heading */
+}
+.label-text {
+  margin-right: 8px; /* Adjust as needed */
+}
+.form label {
+  display: block;
+  color: var(--greyDark-2);
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+
+  letter-spacing: 0.5px;
+}
+
+.form input {
+  padding: 0.8rem;
+  display: block;
+
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid var(--greyLight-2);
+  margin-bottom: 2.2rem;
+
+  color: inherit;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--greyDark-1);
+  font-size: 1.4rem;
+}
+
+.form-details {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: flex-start;
+}
+
+.form-details input {
+  width: 40%;
+}
+
+.form-details div:last-of-type {
+  margin-left: -7rem;
+}
+
+.btn-confirm {
+  background-color: var(--primary-dark);
+  border: none;
+  padding: 1.2rem 2.4rem;
+  width: 100%;
+  color: #fff;
+  border-radius: 6px;
+  margin-top: 1.6rem;
+}
+
+.btn-confirm:hover {
+  background-color: var(--primary);
+}
+
+.hidden {
+  display: none;
+}
+
+.btn-close {
+  position: absolute;
+  top: 2.2rem;
+  right: 2.6rem;
+  border: none;
+  background: none;
+  font-size: 2.2rem;
+}
+
+.success {
+  color: inherit;
+  font-family: sans-serif;
+  font-size: 2.6rem;
+
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+/* Add this to the existing CSS */
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon input {
+  padding-left: 40px; /* Adjust padding to make space for the icon */
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 20px;
+}
+
+/* Icon for Cardholder Name */
+.input-name input {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/149/149071.png'); /* URL of user icon */
+}
+
+/* Icon for Card Number */
+.input-number input {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/633/633611.png'); /* URL of card icon */
+}
+
+/* Icon for Expiry Date */
+.input-expiry input {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/2919/2919592.png'); /* URL of calendar icon */
+}
+
+/* Icon for CVV */
+.input-cvv input {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/159/159604.png'); /* URL of lock icon */
+}
+.card {
+  position: relative;
+  width: calc(4 / 7 * 85rem - 2 * 5rem);
+  height: calc(40rem - 2 * 9rem);
+  perspective: 1000px; /* Add perspective to create 3D effect */
+  cursor: pointer; /* Change cursor to pointer */
+  /* other existing styles */
+}
+.card-container {
+  width: 300px; /* Adjust based on desired card size */
+  height: 180px; /* Adjust based on desired card size */
+  perspective: 1000px;
+  cursor: pointer;
+}
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden; /* Prevents the back side from being visible when flipped */
+  transition: transform 0.6s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.card-front {
+  background: linear-gradient(to bottom right, #1e5799, #7db9e8);
+  color: white;
+}
+
+.card-back {
+  background: linear-gradient(to bottom right, #1e5799, #7db9e8);
+  
+    color: #fff;
+  transform: rotateY(180deg); /* Hide back side initially */
+  width: calc(4 / 7 * 85rem - 2 * 5rem);
+  height: calc(40rem - 2 * 9rem);
+}
+
+/* Flipped state */
+.card-container.flipped .card-front {
+  transform: rotateY(180deg); /* Flip the front side when container is flipped */
+}
+
+
+.card-container.flipped .card-back {
+  transform: rotateY(0deg); /* Show back side when container is flipped */
+}
+
+.card-cvv {
+  grid-row: 3;
+  grid-column: -1;
+
+  justify-self: start;
+  align-self: center;
+}
+
+
+.card-logo {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 60px; /* Adjust size as needed */
+  height: auto;
+}
+.puce {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  width: 70px; /* Adjust size as needed */
+  height: auto;
+}
