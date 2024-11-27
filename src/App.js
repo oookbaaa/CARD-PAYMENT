@@ -172,7 +172,7 @@ function Form({
         </label>
         <input
           type="text"
-          placeholder="John Smith"
+          placeholder="BEDHIAFI Okba"
           value={name}
           onChange={(e) =>
             setName((name) =>
